@@ -3,6 +3,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+def main():
+    set_vector()
+
 def set_vector():
     print('Digite o x do vetor')
     x = int(input())
@@ -18,9 +21,9 @@ def draw_graph(x, y):
     plt.ylim(-y-2,y+2)
     plt.xlim(-x-2,x+2)
 
-    plt.legend(loc='lower left', title='Meu vetor')
+    plt.legend(loc='lower left', title='Seu vetor')
     plt.grid()
     plt.title(f'Grafico do vetor ({x}, {y})')
     plt.show()
 
-set_vector()
+main()
