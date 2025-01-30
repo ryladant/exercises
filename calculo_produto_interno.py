@@ -13,13 +13,15 @@ def pegar_inputs_usuario():
     calculo_angulo_entre_vetores(np.array([x, y]), o)
 
 def calculo_angulo_entre_vetores(v,o):
-    o = transformar_angulo_graus_rad(o)
+    o_rad = transformar_angulo_graus_rad(o)
     array_v = np.array(v)    
-    array_rot = np.array([[np.cos(o), -np.sin(o)],
-                          [np.sin(o), np.cos(o)]])
+    array_rot = np.array([[np.cos(o_rad), -np.sin(o_rad)],
+                          [np.sin(o_rad), np.cos(o_rad)]])
 
     u = np.round(np.dot(array_rot, array_v), decimals=3)
 
-    print(f"O vetor [{v[0]:.3f}, {v[1]:.3f}] rotacionado em {o:0.5f} radianos é:[{u[0]:.3f}, {u[1]:.3f}]")
+    print(f"Vetor Original: [{v[0]:.3f}, {v[1]:.3f}]")
+    print(f"Ângulo de Rotação: {o_rad:.5f} rad | {o:.2f}º")
+    print(f"Vetor Rotacionado: [{u[0]:.3f}, {u[1]:.3f}]")
 
 main()
